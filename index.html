@@ -5,10 +5,75 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/x-icon" href="/favicon.png">
         <title>HON</title>
+        <style>
+            @keyframes h-mov {
+                0% {
+                    margin-left: calc(50vw - 498px/2);
+                }
+                25% {
+                    margin-left: calc(100vw - 498px);
+                }
+                50% {
+                    margin-left: calc(50vw - 498px/2);
+                }
+                75% {
+                    margin-left: 0;
+                }
+                100% {
+                    margin-left: calc(50vw - 498px/2);
+                }
+            }
+
+            @keyframes v-mov {
+                0% {
+                    margin-top: calc(50vh - 277px/2);
+                }
+                25% {
+                    margin-top: calc(100vh - 277px);
+                }
+                50% {
+                    margin-top: calc(50vh - 277px/2);
+                }
+                75% {
+                    margin-top: 0;
+                }
+                100% {
+                    margin-top: calc(50vh - 277px/2);
+                }
+            }
+
+            @keyframes c-mov {
+                0% {
+                    filter: hue-rotate(0deg);
+                }
+                100% {
+                    filter: hue-rotate(360deg);
+                }
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #222;
+            }
+
+            .fish-container {
+                margin-left: calc(50vw - 498px/2);
+                margin-top: calc(50vh - 277px/2);
+                animation-name: h-mov, v-mov, c-mov;
+                animation-delay: 3.6s;
+                animation-duration: 17s, 13s, 30s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+            .fish {
+                border-radius: 10%;
+            }
+        </style>
     </head>
-    <body style="margin: 0; background-color: #222;">
-        <div style="min-height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center;">
-            <a href="https://bgp.tools/as/211767"><img src="fish.gif" alt="Fish huh." style="border-radius: 10%;"></a>
+    <body>
+        <div class="fish-container" width="498px" height="277px">
+            <a href="https://bgp.tools/as/211767"><img class="fish" src="fish.gif" alt="Fish huh."></a>
         </div>
     </body>
 </html>
